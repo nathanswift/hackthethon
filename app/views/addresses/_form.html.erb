@@ -1,0 +1,19 @@
+<h1><%= @address.id ? 'Edit address' : 'New address' %></h1>
+<%= form_with(model: [@location, @address], local: true, class: 'ui form') do |f| %>
+    <div class='field'>
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true, placeholder: 'Address' %>
+        <br>
+        <%= f.label :city %>
+        <%= f.text_field :city, required: true, placeholder: 'City' %>
+        <br>
+        <%= f.label :state %>
+        <%= f.text_field :state, required: true, placeholder: 'State' %>
+        <br>
+        <%= f.label :zip %>
+        <%= f.number_field :zip, required: true, placeholder: 'Zip Code' %>
+        <br>
+    </div>
+    <%= f.submit nil, class: 'ui small blue button inverted' %>
+    <%= link_to 'Back', :back, class: 'ui small secondary button inverted' %>
+<% end %>

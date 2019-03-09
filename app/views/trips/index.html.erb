@@ -1,0 +1,22 @@
+<%=  %><br>
+<h2 class="ui center aligned icon header" style="color: white; font-size: 3em; margin-left: -50px; margin-top: 70px;">
+  Trips
+</h2>
+<button><%= link_to 'Random', trips_random_path, method: :post %></button>
+<br><br>
+
+<div class="ui grid">
+  <% @trips.each do |trip| %>
+  <div class="four wide column">
+    <div class="ui horizontal segments" style="padding: 10px;">
+        <i class="list ul icon"></i>
+        <div class="ui segment" style="padding: 27px;">
+        <h2 ><%= link_to "#{trip.name}", trip %></h2>
+        </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+
+  <!-- font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;-->

@@ -1,0 +1,7 @@
+<h1>Trips#random</h1>
+<p>Find me in app/views/trips/index.html.erb</p>
+
+<% random = @trips.sample(5) %>
+<% random.each do |r| %>
+  <%= r.name %>
+  <% end %>

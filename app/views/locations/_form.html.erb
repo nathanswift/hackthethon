@@ -1,0 +1,13 @@
+<h1><%= @location.id ? 'Edit location' : 'Create location' %></h1>
+<%= form_with(model: [@trip, @location], local: true, class: 'ui form') do |f| %>
+    <div class='field'>
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true, placeholder: 'Name' %>
+    <div class='field'>
+        <%= f.label :days %>
+        <%= f.number_field :days, required: true, placeholder: 'Type numbers of Days' %>
+        <br>
+    </div>
+    <%= f.submit nil, class: 'ui small blue button inverted' %>
+    <%= link_to 'Back', :back, class: 'ui small secondary button inverted' %>
+<% end %>

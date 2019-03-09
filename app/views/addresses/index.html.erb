@@ -1,0 +1,64 @@
+<br><br><br><br>
+<div class="ui centered raised card" style="width: 500px;">
+<br><br>
+ <h2 class="ui center aligned icon header">
+  <i class="circular location icon"> </i>
+ </h2>
+ <br><br>
+  <div class="content">
+  <h1 class="ui centered aligned header">
+  <%= "#{@address.name}"%>
+  </h1>
+        <div class="description">
+            <p></p>
+        </div>
+    </div>
+  <div class="ui placeholder segment" style="
+    width: 500px;
+    /* align-content: center;
+   ">
+  <div class="ui two column stackable center aligned grid">
+    <div class="ui vertical divider">Or</div>
+    <div class="middle aligned row">
+      <div class="column">
+        <div class="ui icon header">
+          <i class="search icon"></i>
+          <!-- write a method that pulls in the name of your location-->
+        </div>
+        <div class="field">
+          <div class="ui search">
+            <div class="ui icon input">
+              <input class="prompt" type="text" placeholder="Search addresss...">
+              <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui icon header">
+          <i class="circular addresss icon"></i>
+           <%= link_to 'New address', new_location_address_path(@location)%>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    <div class="extra content" style="margin-right: 20px;">
+        <p class="ui content center aligned"> Scroll Down for addresss </p>
+        <p class="ui content center aligned" style="margin-bottom: -5px;"> ↓ </p>
+    </div>
+    <div class="ui segments" style="padding: 20px;">
+      <hr>
+            <li><%= link_to address.name, address_path(address.id) %> 
+            <!-- Create an checkbox function for whether address is complete -->
+            <%= link_to 'Delete', location_address_path(@location, address.id), method: :delete, class: 'ui inverted button ' %>
+            <%= link_to 'Edit', edit_address_path(@location, address.id) %>
+            <br>
+            <hr>
+    </div>
+    <div class="extra content">
+        <!-- link to edit addresss -->
+        <%= link_to 'Back',  :back, class: "ui button blue"%>
+    </div>
+</div>
